@@ -1,0 +1,137 @@
+// Ejercicio 12
+// Dibuja patrones con asteriscos utilizando bucles
+
+public class Asteriscos {
+    
+    // Dibuja un patrón con forma de triángulo
+    public void dibujaTriangulo(int offset, int altura) {
+      
+      int numAsteriscos = 1;
+      int numEspacios = offset + (altura-1);
+
+      for (int i = 1; i <= altura; i++) {
+	  escribeCaracteres(' ', numEspacios);
+          escribeCaracteres('*', numAsteriscos);
+	  System.out.println();
+	  numEspacios = numEspacios - 1;
+	  numAsteriscos = numAsteriscos + 2;
+      }
+
+    }
+
+    // Dibuja un patrón con forma de triángulo invertido
+    public void dibujaTrianguloInvertido(int offset, int altura) {
+
+      int numEspacios = offset;
+      int numAsteriscos = altura * 2 - 1;
+      
+      for (int i = 0; i < altura; i++) {
+	escribeCaracteres(' ', numEspacios);
+	escribeCaracteres('*', numAsteriscos);	
+	System.out.println();
+	numEspacios = numEspacios + 1;
+	numAsteriscos = numAsteriscos - 2;
+      }
+    }
+
+
+    // Dibuja un patrón con forma de rectángulo
+    public void dibujaRectangulo(int offset, int anchura, int altura) {
+      for (int i = 0; i < altura; i++) {
+          escribeCaracteres(' ', offset);
+          escribeCaracteres('*', anchura);
+          System.out.println();
+      }
+    }
+
+    // Dibuja un patrón con forma de rombo vacío
+    public void dibujaTrianguloHueco(int offset, int altura) {
+
+      // Dibuja la punta superior
+      escribeCaracteres(' ', offset);
+      System.out.println("*");
+
+      int numEspacios = offset - 1;
+      int numEspaciosInternos = 1;
+
+      // Dibuja el resto del triángulo (menos la punta)
+      for (int i = 0; i < altura; i++) {
+          // Dibuja los espacios a la izquierda
+          escribeCaracteres(' ', numEspacios);	  
+          // Escribe el asterisco izquierdo
+          System.out.print("*");
+          // Dibuja los espacios interiores del rombo
+          escribeCaracteres(' ', numEspaciosInternos);
+          // Escribe el asterisco derecho y el salto de línea
+          System.out.println("*");
+          // Actualiza los contadores
+	  numEspacios = numEspacios - 1;
+	  numEspaciosInternos = numEspaciosInternos + 2;
+      }
+    }
+    
+    // Dibuja un patrón con forma de rombo vacío invertido
+    public void dibujaTrianguloHuecoInvertido(int offset, int altura) {
+
+      // Dibuja el triángulo (menos la punta)
+      int numEspacios = offset;
+      int numEspaciosInternos = altura - 2;
+
+      for (int i = 0; i < altura; i++) {   
+          // Dibuja los espacios a la izquierda
+          escribeCaracteres(' ', numEspacios);
+          // Escribe el asterisco izquierdo
+          System.out.print("*");
+          // Dibuja los espacios interiores del rombo
+          escribeCaracteres(' ', numEspaciosInternos);
+          // Escribe el asterisco derecho y el salto de línea
+          System.out.println("*");
+          // Actualiza los contadores
+	  numEspacios = numEspacios + 1;
+	  numEspaciosInternos = numEspaciosInternos - 2;
+      }
+
+      // Dibuja la punta inferior
+      escribeCaracteres(' ', numEspacios);
+      System.out.println("*");
+
+    }
+
+
+    // Dibuja un patrón con forma de rombo relleno
+    public void dibujaRombo(int offset, int altura) {
+    
+      // Primero dibujamos el triángulo superior
+      dibujaTriangulo(offset, altura/2);
+      
+      // Y ahora dibujamos el triángulo inferior
+      dibujaTrianguloInvertido(offset, altura/2 - 1);      
+
+   }
+
+    // Dibuja un patrón con forma de rombo hueco
+    public void dibujaRomboHueco(int offset, int altura) {
+    
+      // Primero dibujamos el triángulo superior
+      dibujaTrianguloHueco(offset, altura/2);
+      
+      // Y ahora dibujamos el triángulo inferior
+      dibujaTrianguloHuecoInvertido(offset, altura/2);      
+
+   }
+
+    
+    // Escribe en la consola un carácter el número de veces especificado
+    public void escribeCaracteres(char caracter, int repeticiones) {
+       for (int i = 0; i < repeticiones; i++) {
+           System.out.print(caracter);
+       }
+    }
+}
+
+
+
+
+
+
+

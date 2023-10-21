@@ -1,0 +1,7 @@
+Procedimientos para crear un programa en java.
+
+00. Importar librerias. 
+01. Crear una clase donde inicializaremos todos los componentes
+02. Crear un constructor donde le daremos forma a todos nuestros componentes 
+03. Configurar toda nuestra interfaz gráfica. 
+
