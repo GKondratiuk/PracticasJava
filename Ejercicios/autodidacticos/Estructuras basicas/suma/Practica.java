@@ -1,16 +1,10 @@
 public class Practica{
   public static void main(String args[]){
 
-  int num1 = 4;
-  int num2 = 4;
-  int resultado = 0;
-
-  resultado = num1 + num2 / 2;
- 
-  System.out.println("El resultado incorrecto es: " + resultado);
-
-  resultado = (num1 + num2) / 2;
- 
-  System.out.println("El resultado correcto es: " +   resultado);
+  boolean p = true;
+  boolean q = false;
+  boolean o = true;
+  
+  System.out.println((p && q) || o);
  }
 }
